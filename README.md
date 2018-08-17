@@ -60,9 +60,7 @@ or if you want you can use mine ( which will play a mp3 until the call is over. 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Play loop="0">
-		  https://raw.githubusercontent.com/robiXxu/callFlood/master/files/muepsd.mp3
-  	</Play>
+    <Play loop="0">https://raw.githubusercontent.com/robiXxu/callFlood/master/files/muepsd.mp3</Play>
 </Response>
 ```
 - Get the URL of that TwiML Bin and paste it into CF_VOICE_URL env var inside .env file.
