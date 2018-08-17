@@ -5,7 +5,7 @@
 ### Support
 
 - [x] Twilio
-- [ ] Nexmo
+- ~~[ ] Nexmo~~
 
 ### Up and running 
 
@@ -71,8 +71,8 @@ or if you want you can use mine ( which will play a mp3 until the call is over. 
 
 ## TODO
 - [ ] actual flood ( now only one call is made - for testing purposes )
-- [ ] support multiple targets
-- [ ] support Nexmo
+- [x] support multiple targets
+- ~~[ ] support Nexmo~~
 - [ ] update README
 - [ ] drink a beer 
 - [ ] do the same thing in python for fun 😅
