@@ -77,3 +77,4 @@ or if you want you can use mine ( which will play a mp3 until the call is over. 
 - [ ] support Nexmo
 - [ ] update README
 - [ ] drink a beer 
+- [ ] do the same thing in python for fun 😅
