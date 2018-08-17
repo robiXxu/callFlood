@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-if( _.every(["CF_ACCOUNT_SID", "CF_AUTH_TOKEN", "CF_VOICE_URL", "CF_TARGET_NUMBER"], !_.isUndefined) ) {
+if( !_.every(["CF_ACCOUNT_SID", "CF_AUTH_TOKEN", "CF_VOICE_URL", "CF_TARGET_NUMBER", "CF_ACCOUNT_NUMBER"], key => !_.isUndefined(process.env[key]) && process.env[key].length) ) {
   console.error(" Please check your .env file and make sure you have completed as described in README.md");
   process.exit(-1);
 }
