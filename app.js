@@ -9,12 +9,28 @@ const twilio = require('twilio');
 
 const client = twilio(process.env.CF_ACCOUNT_SID, process.env.CF_AUTH_TOKEN);
 
-client.calls
-  .create({
-    "url" : process.env.CF_VOICE_URL,
-    "to": process.env.CF_TARGET_NUMBER,
-    "from": process.env.CF_ACCOUNT_NUMBER
-  })
-  .then(call => console.log(`Called ${process.env.CF_TARGET_NUMBER}. SID ${call.sid}`))
-  .catch(err => console.error(`[ERROR]: ${JSON.stringify(err)}`))
-  .done();
+const numbers = process.env.CF_TARGET_NUMBER.split(',');
+
+const call = (to) => client.calls.create({
+  url : process.env.CF_VOICE_URL,
+  to,
+  from: process.env.CF_ACCOUNT_NUMBER
+});
+
+const calls = numbers.map(number => {
+  return new Promise((resolve,reject) => {
+    call(number)
+      .then(c => {
+        console.log(`Called ${process.env.CF_TARGET_NUMBER}. SID ${c.sid}`)
+        resolve(c.sid);
+      })
+      .catch(err => {
+        console.error(`[ERROR]: ${JSON.stringify(err)}`)
+        reject(err);
+      })
+  });
+});
+
+Promise.all(calls).then((v) => {
+  console.log(v);
+});
