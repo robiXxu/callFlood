@@ -1,0 +1,12 @@
+# vs code stuff
+.vscode
+.history
+
+# mac shit
+.DS_Store
+
+node_modules
+
+yarn.lock
+
+.env

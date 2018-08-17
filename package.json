@@ -1,0 +1,17 @@
+{
+  "name": "callFlood",
+  "version": "1.0.0",
+  "description": "A nodejs bot to create programmable voice calls.",
+  "main": "app.js",
+  "author": "Schiriac Robert <schiriac.robert@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "app": "node -r dotenv/config app.js",
+    "dev": "nodemon -r dotenv/config app.js"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "lodash": "^4.17.10",
+    "twilio": "^3.19.1"
+  }
+}
