@@ -16,4 +16,5 @@ client.calls
     "from": process.env.CF_ACCOUNT_NUMBER
   })
   .then(call => console.log(`Called ${process.env.CF_TARGET_NUMBER}. SID ${call.sid}`))
-  .catch(err => console.error(`[ERROR]: ${JSON.stringify(err)}`));
+  .catch(err => console.error(`[ERROR]: ${JSON.stringify(err)}`))
+  .done();
